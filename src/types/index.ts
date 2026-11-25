@@ -26,6 +26,14 @@ export interface NavItem {
   readonly href: string;
 }
 
+export type HeroPhotoKey = 'familia' | 'crecimiento' | 'apoyo';
+
+export interface HeroGalleryPhoto {
+  readonly key: HeroPhotoKey;
+  readonly label: string;
+  readonly alt: string;
+}
+
 export interface HeroContent {
   readonly badge: string;
   readonly title: string;
@@ -35,6 +43,7 @@ export interface HeroContent {
   readonly primaryCta: string;
   readonly secondaryCta: string;
   readonly trustNotes: readonly string[];
+  readonly galleryPhotos: readonly HeroGalleryPhoto[];
 }
 
 export interface PillarItem {

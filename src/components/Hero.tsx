@@ -1,22 +1,32 @@
 import {
   ArrowRight,
   Check,
-  Heart,
   MapPin,
   MessageCircle,
   Sparkles,
   Video,
 } from 'lucide-react';
+import heroApoyoImg from '../assets/images/hero-apoyo.jpg';
+import heroCrecimientoImg from '../assets/images/hero-crecimiento.jpg';
+import heroFamiliaImg from '../assets/images/hero-familia.jpg';
 import { contactConfig } from '../config/contact';
 import { siteContent } from '../data/content';
+import type { HeroPhotoKey } from '../types';
+
+const heroImageMap: Record<HeroPhotoKey, string> = {
+  familia: heroFamiliaImg,
+  crecimiento: heroCrecimientoImg,
+  apoyo: heroApoyoImg,
+};
 
 export function Hero() {
   const { hero } = siteContent;
+  const [featuredPhoto, ...secondaryPhotos] = hero.galleryPhotos;
 
   return (
     <section
       id="inicio"
-      className="relative overflow-hidden bg-crema pt-12 pb-16 sm:pt-16 sm:pb-24 lg:pt-20 lg:pb-28"
+      className="relative overflow-hidden bg-crema pt-10 pb-16 sm:pt-14 sm:pb-24 lg:pt-16 lg:pb-24"
     >
       {/* Acentos orgánicos sutiles de fondo */}
       <div
@@ -29,20 +39,20 @@ export function Hero() {
       />
 
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-10">
+        <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-12">
           {/* Columna principal de propuesta de valor */}
-          <div className="lg:col-span-7">
+          <div className="lg:col-span-6">
             <div className="inline-flex items-center gap-2 rounded-full border border-acento-suave bg-blanco px-4 py-1.5 text-xs font-semibold tracking-wide text-secundario shadow-2xs sm:text-sm">
               <Sparkles className="h-3.5 w-3.5 text-primario" aria-hidden="true" />
               <span>{hero.badge}</span>
             </div>
 
-            <h1 className="mt-6 font-serif text-3xl font-semibold leading-[1.2] text-texto-principal sm:text-4xl lg:text-5xl">
+            <h1 className="mt-6 font-serif text-3xl font-semibold leading-[1.2] text-texto-principal sm:text-4xl lg:text-[2.85rem]">
               {hero.title}{' '}
               <span className="text-primario">{hero.titleHighlight}</span>
             </h1>
 
-            <p className="mt-6 max-w-2xl text-base leading-relaxed text-texto-secundario sm:text-lg">
+            <p className="mt-5 max-w-xl text-base leading-relaxed text-texto-secundario sm:text-lg">
               {hero.subtitle}
             </p>
 
@@ -60,7 +70,7 @@ export function Hero() {
             </div>
 
             {/* Acciones principales */}
-            <div className="mt-8 flex flex-col gap-3.5 sm:flex-row sm:items-center">
+            <div className="mt-7 flex flex-col gap-3.5 sm:flex-row sm:items-center">
               <a
                 href={contactConfig.whatsappUrl}
                 target="_blank"
@@ -96,40 +106,49 @@ export function Hero() {
             </ul>
           </div>
 
-          {/* Tarjeta editorial de bienvenida */}
-          <div className="lg:col-span-5">
-            <div className="relative rounded-3xl border border-acento-suave bg-blanco p-7 shadow-sm sm:p-9">
-              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-crema text-primario">
-                <Heart className="h-6 w-6" aria-hidden="true" />
+          {/* Composición fotográfica editorial con tonos suaves y serenos */}
+          <div className="lg:col-span-6">
+            <div className="space-y-3.5 sm:space-y-4">
+              {featuredPhoto && (
+                <figure className="group relative overflow-hidden rounded-3xl border border-acento-suave bg-blanco shadow-sm">
+                  <img
+                    src={heroImageMap[featuredPhoto.key]}
+                    alt={featuredPhoto.alt}
+                    className="aspect-[16/10] w-full object-cover object-center saturate-[0.78] contrast-[0.96] transition-transform duration-500 group-hover:scale-[1.02]"
+                  />
+                  {/* Velo cálido sutil para armonizar con la paleta crema */}
+                  <div
+                    aria-hidden="true"
+                    className="pointer-events-none absolute inset-0 bg-gradient-to-t from-texto-principal/25 via-crema/8 to-transparent"
+                  />
+                  <figcaption className="absolute bottom-3.5 left-3.5 rounded-full border border-blanco/40 bg-crema/90 px-3.5 py-1 text-xs font-semibold tracking-wide text-texto-principal backdrop-blur-xs">
+                    {featuredPhoto.label}
+                  </figcaption>
+                </figure>
+              )}
+
+              <div className="grid grid-cols-2 gap-3.5 sm:gap-4">
+                {secondaryPhotos.map((photo) => (
+                  <figure
+                    key={photo.key}
+                    className="group relative overflow-hidden rounded-2xl border border-acento-suave bg-blanco shadow-sm sm:rounded-3xl"
+                  >
+                    <img
+                      src={heroImageMap[photo.key]}
+                      alt={photo.alt}
+                      loading="lazy"
+                      className="aspect-[4/4.3] w-full object-cover object-center saturate-[0.78] contrast-[0.96] transition-transform duration-500 group-hover:scale-[1.02]"
+                    />
+                    <div
+                      aria-hidden="true"
+                      className="pointer-events-none absolute inset-0 bg-gradient-to-t from-texto-principal/25 via-crema/8 to-transparent"
+                    />
+                    <figcaption className="absolute bottom-3 left-3 rounded-full border border-blanco/40 bg-crema/90 px-3 py-1 text-[11px] font-semibold tracking-wide text-texto-principal backdrop-blur-xs sm:text-xs">
+                      {photo.label}
+                    </figcaption>
+                  </figure>
+                ))}
               </div>
-
-              <p className="mt-5 font-serif text-xl font-medium leading-snug text-texto-principal sm:text-2xl">
-                Un espacio sereno para escuchar, comprender y acompañar cada etapa del crecimiento.
-              </p>
-
-              <p className="mt-4 text-sm leading-relaxed text-texto-secundario sm:text-base">
-                Trabajamos juntos desde la cercanía y el respeto por la historia de cada familia,
-                sin juicios ni fórmulas rígidas.
-              </p>
-
-              <dl className="mt-7 grid grid-cols-2 gap-4 border-t border-acento-suave pt-6">
-                <div className="rounded-2xl bg-crema p-4">
-                  <dt className="text-xs font-medium text-texto-secundario">Trayectoria</dt>
-                  <dd className="mt-1 font-serif text-xl font-semibold text-secundario">
-                    +10 años
-                  </dd>
-                </div>
-                <div className="rounded-2xl bg-crema p-4">
-                  <dt className="text-xs font-medium text-texto-secundario">Atención</dt>
-                  <dd className="mt-1 font-serif text-lg font-semibold text-primario">
-                    Virtual y Bogotá
-                  </dd>
-                </div>
-              </dl>
-
-              <p className="mt-5 text-xs leading-relaxed text-texto-secundario">
-                {hero.modalitiesLabel}
-              </p>
             </div>
           </div>
         </div>

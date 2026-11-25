@@ -31,6 +31,23 @@ export const siteContent: SiteContent = {
       'Enfoque en crianza respetuosa',
       'Espacio cálido y confidencial',
     ],
+    galleryPhotos: [
+      {
+        key: 'familia',
+        label: 'Ambiente familiar',
+        alt: 'Madre, padre e hijo compartiendo un cuento juntos en un sofá luminoso de tonos cálidos y suaves',
+      },
+      {
+        key: 'crecimiento',
+        label: 'Crecimiento sano',
+        alt: 'Niño dibujando tranquilamente con lápices de colores suaves y juguetes de madera sobre una mesa cálida',
+      },
+      {
+        key: 'apoyo',
+        label: 'Procesos de apoyo',
+        alt: 'Espacio cálido y sereno de acompañamiento psicológico con sillones claros, luz natural y tonos tierra suaves',
+      },
+    ],
   },
 
   parenting: {
