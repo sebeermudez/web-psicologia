@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 600" fill="none" role="img" aria-label="Espacio reservado para fotografía profesional de Ibeth Camila Osorio Mora">
+  <defs>
+    <linearGradient id="bgWarm" x1="0" y1="0" x2="480" y2="600" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#F5EFE6" />
+      <stop offset="55%" stop-color="#EAE2D6" />
+      <stop offset="100%" stop-color="#E3D8C8" />
+    </linearGradient>
+    <radialGradient id="softGlow" cx="50%" cy="34%" r="55%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.7" />
+      <stop offset="100%" stop-color="#FAF7F2" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Fondo cálido editorial 4:5 -->
+  <rect width="480" height="600" rx="28" fill="url(#bgWarm)" />
+  <rect width="480" height="600" rx="28" fill="url(#softGlow)" />
+
+  <!-- Formas orgánicas sutiles en oliva y terracota -->
+  <circle cx="395" cy="95" r="88" fill="#4A5D52" fill-opacity="0.08" />
+  <circle cx="82" cy="512" r="105" fill="#9C5B46" fill-opacity="0.09" />
+
+  <!-- Marco interior fino -->
+  <rect x="24" y="24" width="432" height="552" rx="20" stroke="#9C5B46" stroke-opacity="0.22" stroke-width="1.5" />
+
+  <!-- Ramo botánico minimalista superior izquierdo -->
+  <g stroke="#4A5D52" stroke-opacity="0.35" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M56 142C68 108 92 78 124 58" />
+    <path d="M74 108C66 94 70 80 84 74C88 89 84 101 74 108Z" fill="#4A5D52" fill-opacity="0.08" />
+    <path d="M96 84C92 69 98 58 113 56C115 70 108 80 96 84Z" fill="#9C5B46" fill-opacity="0.08" />
+  </g>
+
+  <!-- Retrato estilizado / silueta serena -->
+  <circle cx="240" cy="240" r="112" fill="#FAF7F2" fill-opacity="0.82" stroke="#EAE2D6" stroke-width="2" />
+  <circle cx="240" cy="212" r="40" fill="#9C5B46" fill-opacity="0.16" stroke="#9C5B46" stroke-opacity="0.55" stroke-width="2" />
+  <path
+    d="M168 318C178 278 205 262 240 262C275 262 302 278 312 318"
+    fill="#4A5D52"
+    fill-opacity="0.14"
+    stroke="#4A5D52"
+    stroke-opacity="0.55"
+    stroke-width="2"
+    stroke-linecap="round"
+  />
+
+  <!-- Línea divisoria delicada -->
+  <line x1="176" y1="398" x2="304" y2="398" stroke="#9C5B46" stroke-opacity="0.4" stroke-width="1.5" />
+
+  <!-- Leyenda editorial -->
+  <text
+    x="240"
+    y="442"
+    text-anchor="middle"
+    fill="#2B2927"
+    font-family="Lora, Georgia, 'Times New Roman', serif"
+    font-size="22"
+    font-weight="600"
+  >
+    Ibeth Camila Osorio Mora
+  </text>
+  <text
+    x="240"
+    y="472"
+    text-anchor="middle"
+    fill="#5E5A56"
+    font-family="Plus Jakarta Sans, system-ui, sans-serif"
+    font-size="13.5"
+    font-weight="500"
+    letter-spacing="0.4"
+  >
+    Psicóloga Especialista en Infancia y Desarrollo
+  </text>
+
+  <!-- Etiqueta discreta de reemplazo -->
+  <rect x="130" y="502" width="220" height="34" rx="17" fill="#FAF7F2" fill-opacity="0.9" stroke="#9C5B46" stroke-opacity="0.28" />
+  <text
+    x="240"
+    y="523.5"
+    text-anchor="middle"
+    fill="#9C5B46"
+    font-family="Plus Jakarta Sans, system-ui, sans-serif"
+    font-size="12"
+    font-weight="600"
+    letter-spacing="0.3"
+  >
+    Fotografía profesional próximamente
+  </text>
+</svg>
